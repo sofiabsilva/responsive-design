@@ -146,7 +146,7 @@ main {
   width: 480px;
   width:100%;
   position: relative;
-  background-image: url("./images/dog.jpg");
+  background-image: url("https://s17.postimg.org/qltzwfm9b/head-resizeimage.jpg");
   background-size: cover;
   height: 300px;
 }
@@ -178,7 +178,7 @@ main {
 .news__title {
   font-weight: 300;
   border-bottom: 1px solid #E0E0E0;
-  line-height: 24px;
+  line-height: 1.5em;
 }
 
 .top-news__item {
@@ -216,6 +216,7 @@ main {
 
 .scores {
   padding-top: 1em;
+  flex-grow: 1;
 }
 
 .scores__table {
@@ -232,6 +233,12 @@ main {
   color: #fff;
   font-weight: 300;
   background-color: #78909C;
+}
+.scores__table tr:nth-child(1) th:nth-child(3) {
+  text-align: right;
+}
+.scores__table tr:nth-child(1) th:nth-child(5) {
+  text-align: left;
 }
 
 .scores__table tr:nth-child(odd) td {
@@ -251,9 +258,10 @@ main {
 }
 
 .scores__table td:nth-child(2),
-.scores__table td:nth-child(5) {
+ .scores__table td:nth-child(1) {
   text-align: center;
 }
+
 
 /*
  *
@@ -319,6 +327,7 @@ main {
  */
 
 .recent-news {
+  flex-grow: 1;
   clear: both;
   padding: 1em;
 }
@@ -329,7 +338,7 @@ main {
 }
 
 .snippet__thumbnail {
-  width: 100px;
+  width: 140px;
   float: left;
   margin-right: 1em;
 }
@@ -361,7 +370,7 @@ footer {
   padding: 1em;
   width: 100%;
   text-align:center;
-  font-size:14px;
+  font-size:15px;
 }
 
 footer li {
@@ -391,11 +400,14 @@ img, embed, object, video {
 }
 .news a, .news {
   font-size: 14.5px;
-  line-height: 1.2em;
 }
 .news__more {
   font-size: 16px;
 }
+  .snippet__title a {
+    font-size: 18px;
+  }
+
 
 /*
  * Responsive for when viewport size is less than 600px
@@ -417,7 +429,8 @@ img, embed, object, video {
     float: right;
     color: gray;
     padding: 1em .5em;
-    font-size: 2.2em;
+    font-size: 2em;
+    line-height: 1.2em;
     display: flex;
     cursor: pointer;
   }
@@ -440,7 +453,21 @@ img, embed, object, video {
      display: block;
    }
    .scores__table {
-   font-size: 14px;
+   font-size: 15px;
+   }
+   .hide {
+     display: none;
+   }
+   .scores__location {
+     display: none;
+   }
+   .snippet__thumbnail {
+     display: none;
+   }
+   .snippet {
+     font-size: 15.5px;
+     display: flex;
+     flex-wrap: wrap;
    }
  }
  /*
@@ -489,15 +516,32 @@ img, embed, object, video {
     font-size: 14.5px;
   }
   .scores__table {
-  font-size: 14px;
+  font-size: 13.5px;
+  }
+  .scores__location {
+    display: none;
   }
   .news a {
-    font-size: 16px;
+    font-size: 15px;
   }
   .top-news__item {
   padding-bottom: 0.5em;
   padding-top: 0.5em;
 }
+.weather__today__temp {
+  font-size: 2.6em;
+}
+.weather__today__deg {
+  font-size: 1.9em;
+}
+.snippet__title a {
+    font-size: 18px;
+  }
+.snippet__thumbnail {
+  width: 150px;
+  padding-bottom: 1.5em;
+}
+
   /* .weather {
     width: 50%;
     order: 2;
@@ -518,6 +562,18 @@ img, embed, object, video {
   }
 }
 
+
+@media screen and (min-width: 845px) and (max-width: 929px) {
+  .snippet {
+    font-size: 15.7px;
+  }
+  .scores__table {
+    font-size: 13px;
+  }
+  .scores__location {
+    display: block;
+  }
+}
 /*
  * Responsive for when viewport size is at least 930px
  *
@@ -568,6 +624,17 @@ img, embed, object, video {
   .weather {
   font-size: 16px;
   }
+.snippet__title a {
+    font-size: 18px;
+  }
+  .snippet__thumbnail {
+    width: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 1em;
+    padding-bottom: 1.5em;
+
+  }
 }
 /*
  * Responsive for when viewport size is at least 1045px
@@ -597,6 +664,8 @@ img, embed, object, video {
      padding-left:2%;
      padding-right: 1%;
      text-align: justify;
-
+   }
+   .snippet__thumbnail {
+     width: 150px
    }
  }
